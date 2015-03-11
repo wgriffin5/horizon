@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "d3-rails"
 gem 'bootstrap'
 gem 'quiet_assets'
 gem 'haml-rails'
