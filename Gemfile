@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 
-ruby '2.0.0'
-gem 'rails_12factor'
+ruby '2.2.0'
+
 gem 'erb2haml'
 gem 'html2haml'
 
@@ -21,8 +21,8 @@ gem 'better_errors'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 
-gem 'mysql2', group: :development
-gem 'pg', group: :production
+
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -54,7 +54,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  
+  gem 'mysql2'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
@@ -63,3 +63,7 @@ group :development, :test do
   gem 'spring'
 end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end 
