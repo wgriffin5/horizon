@@ -12,9 +12,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ 
+ 
+ *= require_self
+ *= require cover
  *= require bootstrap
  *= require bootstrap-theme
- *= require cover
- *= require_self
  *= require_tree .
  */
