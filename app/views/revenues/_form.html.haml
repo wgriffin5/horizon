@@ -1,14 +1,15 @@
-= form_for @revenue do |revenue|
-%br
-= revenue.label :name
-= revenue.text_field :name
-%br
-= revenue.label :gdp
-= revenue.text_field :gdp
-%br
-= revenue.label :tax_take
-= revenue.text_field :tax_take
-%br
-= revenue.label :growth_rate
-= revenue.text_field :growth_rate
-= revenue.submit
+= form_for @revenue,  url: revenues_path(@revenue) do |revenue|
+  %br
+  = revenue.label :name
+  = revenue.text_field :name
+  %br
+  = revenue.label :gdp
+  = revenue.text_field :gdp
+  %br
+  = revenue.label :tax_take
+  = revenue.text_field :tax_take
+  %br
+  = revenue.label :growth_rate
+  = revenue.text_field :growth_rate
+  %br
+  = revenue.submit

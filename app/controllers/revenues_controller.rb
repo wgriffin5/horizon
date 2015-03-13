@@ -11,7 +11,7 @@ end
 
 def create
   @revenue = Revenue.create hospital_params
-  redirect_to
+  redirect_to revenues_path
 end
 
 def show 
