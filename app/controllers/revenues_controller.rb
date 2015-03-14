@@ -35,6 +35,12 @@ def destroy
   redirect_to revenues_path
 end
 
+ 
+
+
+end
+
+
 private 
 
 def revenue_params

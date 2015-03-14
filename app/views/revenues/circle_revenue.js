@@ -1,15 +1,18 @@
 
-var canvas = d3.select("body")
-            .append("svg")
+var svg = d3.select("body").append("svg");
+            
             .attr("width", 400)
             .attr("height", 400);
+var dataInput = 10;
 
-var circle = canvas.append("circle")
-              .attr("cx", 200)
-              .attr("cy", 250)
-              .attr("r", 100)
+var circle = svg.selectAll("circle")
+    .data([dataInput], function(d) {return d;});
+              .attr("cx", 30)
+              .attr("cy", 30)
+              .attr("r", function(d) {return d; });
               .attr("fill", "blue")
-            
+
+circle.exit().remove()
 
 // circle.enter().append("circle")
 
