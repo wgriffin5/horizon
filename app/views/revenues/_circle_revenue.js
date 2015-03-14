@@ -7,9 +7,10 @@ var canvas = d3.select("body")
 var dataInput = 100;
 
 var circle = canvas.selectAll("circle")
+    .data([dataInput], function(d) {return d;});
               .attr("cx", 200)
               .attr("cy", 250)
-              .attr("r", 100)
+              .attr("r", function(d) {return d; });
               .attr("fill", "blue")
 
 circle.exit().remove();
