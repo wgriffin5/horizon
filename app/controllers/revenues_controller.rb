@@ -3,6 +3,7 @@ class RevenuesController < ApplicationController
 def index 
   # revenue is the object (scenario of inputed user values) 
   @revenues = Revenue.all 
+  @newrevenue = Revenue.new
 end 
 
 def new
@@ -10,7 +11,7 @@ def new
 end
 
 def create
-  @revenue = Revenue.create hospital_params
+  @revenue = Revenue.create revenue_params
   redirect_to revenues_path
 end
 
@@ -40,7 +41,7 @@ def revenue_params
   params.require(:revenue).permit(
     :name,
     :gdp,
-    :tax_take
+    :tax_take,
     :growth_rate
   )
   
@@ -48,7 +49,7 @@ def revenue_params
 end
 
 
-
+end
 
 
 
