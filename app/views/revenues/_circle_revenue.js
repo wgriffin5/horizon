@@ -1,8 +1,10 @@
 
 var canvas = d3.select("body")
-            .append("svg")
-            .attr("width", 400)
-            .attr("height", 400);
+            .append("svg");
+            
+            // .attr("width", 400)
+            // .attr("height", 400);
+var dataInput = 100;
 
 var circle = canvas.selectAll("circle")
               .attr("cx", 200)
