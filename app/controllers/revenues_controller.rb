@@ -12,7 +12,7 @@ end
 
 def create
   @revenue = Revenue.create revenue_params
-  redirect_to revenues_path
+  redirect_to root_path
 end
 
 def show 
