@@ -4,7 +4,7 @@
 
 
 
-// button calculate
+// button calculate // def calculate method
 $(document).on('click', 'revenue-create-submit', function(){
   console.log("creating");
   var revenue_id = $(this).attr('revenue_id');
@@ -23,13 +23,13 @@ var svg = d3.select("body").append("svg");
 var dataInput = [30];
 
 var circle = svg.selectAll("circle")
-    // .data([dataInput], function(d) { return d; });
-        // .attr("cx", 50)
-        // .attr("cy", 50)
-        // .attr("r", function(d) { return d; })
-        // .attr("fill", "blue");
+    .data([dataInput], function(d) { return d; });
+    circle.attr("cx", 50)
+    circle.attr("cy", 50)
+    circle.attr("r", function(d) { return d; })
+    circle.attr("fill", "blue");
 
-// circle.exit().remove();
+circle.exit().remove();
 // }
 // circle.enter().append("circle")
 
