@@ -5,22 +5,22 @@ $(document).ready(function() {
 
 
 // button calculate
-$(document).on('click', 'revenue-create-submit', function(){
-  console.log("creating");
-  var revenue_id = $(this).attr('revenue_id');
-  $.ajax({
-    type: "POST",
-    url: '/revenues/' + revenue_id,
-    dataType: 'script'
-  })
-})
+// $(document).on('click', 'revenue-create-submit', function(){
+//   console.log("creating");
+//   var revenue_id = $(this).attr('revenue_id');
+//   $.ajax({
+//     type: "POST",
+//     url: '/revenues/' + revenue_id,
+//     dataType: 'script'
+//   })
+// })
 
 
 
 // Circle 
 
 var svg = d3.select("body").append("svg");
-var dataInput = 30;
+var dataInput = [30];
 
 var circle = svg.selectAll("circle")
     .data([dataInput], function(d) { return d; });
@@ -41,7 +41,7 @@ circle.exit().remove()
 
 
 
-})
+}
 
 
 
