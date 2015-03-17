@@ -1,4 +1,18 @@
-// $(document).ready(function() {
+$(document).ready(function() {
+    // Circle 
+  var svg = d3.select("body").append("svg");
+  var dataInput = 30;
+
+  var circle = svg.selectAll("circle")
+      .data([dataInput], function(d) { return d; });
+      circle.attr("cx", 50)
+      circle.attr("cy", 50)
+      circle.attr("r", function(d) { return d; })
+      circle.attr("fill", "blue");
+      console.log("CIRCLE")
+
+  circle.exit().remove();
+});
   
 
 
@@ -13,23 +27,14 @@ $(document).on('click', 'revenue-create-submit', function(){
     url: '/revenues/' + revenue_id,
     dataType: 'script'
   })
+
+
 })
 
 
 
-// Circle 
 
-var svg = d3.select("body").append("svg");
-var dataInput = [30];
 
-var circle = svg.selectAll("circle")
-    .data([dataInput], function(d) { return d; });
-    circle.attr("cx", 50)
-    circle.attr("cy", 50)
-    circle.attr("r", function(d) { return d; })
-    circle.attr("fill", "blue");
-
-circle.exit().remove();
 // }
 // circle.enter().append("circle")
 
