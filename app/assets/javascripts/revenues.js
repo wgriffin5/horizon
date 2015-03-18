@@ -1,4 +1,4 @@
-$(document).ready(function() {
+// $(document).ready(function() {
 
 
 
@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 
 
-  });
+  
 
   // $('#form').on('submit', function(e) {
   //   event.preventDefault();
@@ -41,11 +41,12 @@ $(document).ready(function() {
   //       msg.append("post works");
   //       console.log(result);
   //       $('form').append('svg'),
-  //     // error: function(err){
-  //     //   console.log(err);
-  //     });
-  //   // });
-  // });
+      // error: function(err){
+      //   console.log(err);
+      
+
+
+
 
 
 
