@@ -36,7 +36,7 @@ $(document).ready(function() {
   //     dataType: 'json',
   //     data: request,
   //     success: function(result) {
-  //       $(svg).append('circle');
+  //       svg.append(circle);
   //       var msg = $('<p></p>');
   //       msg.append("post works");
   //       console.log(result);

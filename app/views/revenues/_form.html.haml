@@ -1,16 +1,16 @@
 = form_for @newrevenue, id: "form",  url: revenues_path(@revenue) do |revenue|
   %br
   = revenue.label :name
-  = revenue.text_field :name
+  = revenue.text_field :name , id:'name'
   %br
   = revenue.label :gdp
-  = revenue.text_field :gdp
+  = revenue.text_field :gdp , id:'gdp'
   %br
   = revenue.label :tax_take
-  = revenue.text_field :tax_take
+  = revenue.text_field :tax_take, id:'tax_take'
   %br
   = revenue.label :growth_rate
-  = revenue.text_field :growth_rate
+  = revenue.text_field :growth_rate, id:'growth_rate'
   %br
 
   = revenue.submit 'button', class: 'button'
