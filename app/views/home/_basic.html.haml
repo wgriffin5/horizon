@@ -27,8 +27,8 @@
             %li
               %a{:href => "#about"} Assumptions
             %li
-              %a{:href => "#contact"} Contact
-        / /.nav-collapse
+              = link_to "Collaborate", hackpad_index_path
+        /.nav-collapse
     .container
       .starter-template
       %br
@@ -41,25 +41,23 @@
     .container
       = render :partial => '/revenues/form'
     .container
-      .shmontainer
-        <script>
-        var svg = d3.select(".shmontainer").append("svg")
-        var dataInput = 50
-        var circle = svg.selectAll("circle")
-        circle.attr("cx", 50)
-        circle.attr("cy", 50)
-        circle.attr("r", 30
-        circle.attr("fill", "blue")
-        console.log("CIRCLE")
-        circle.exit().remove();
+      / .shmontainer
+      /   <script>
+      /   var svg = d3.select(".shmontainer").append("svg")
+      /   var dataInput = 50
+      /   var circle = svg.selectAll("circle")
+      /   circle.attr("cx", 50)
+      /   circle.attr("cy", 50)
+      /   circle.attr("r", 30
+      /   circle.attr("fill", "blue")
+      /   console.log("CIRCLE")
+      /   circle.exit().remove();
 
 
 
-        / <svg width="500" height="200">
-      
-
-      
-        </script>
+      <svg width="400" height="200">
+      <circle cx="200" cy="100" r="50" fill="red"></circle>
+    
       
 
 

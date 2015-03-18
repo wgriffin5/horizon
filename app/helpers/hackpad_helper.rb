@@ -1,0 +1,2 @@
+module HackpadHelper
+end
