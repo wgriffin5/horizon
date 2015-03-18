@@ -41,25 +41,25 @@
     .container
       = render :partial => '/revenues/form'
     .container
-      <script>
-      var svg = d3.select("body").append("svg");
-      / var dataInput = (gdp*taxtake*growthrate);
-      var dataInput = 50
-      var circle = svg.selectAll("circle")
-      circle.attr("cx", 50)
-      circle.attr("cy", 50)
-      circle.attr("r", 20)
-      circle.attr('fill', 'blue')
-      console.log("CIRCLE")
-      </script>
+      .shmontainer
+        <script>
+        var svg = d3.select(".shmontainer").append("svg")
+        var dataInput = 50
+        var circle = svg.selectAll("circle")
+        circle.attr("cx", 50)
+        circle.attr("cy", 50)
+        circle.attr("r", 30
+        circle.attr("fill", "blue")
+        console.log("CIRCLE")
+        circle.exit().remove();
 
 
 
+        / <svg width="500" height="200">
+      
 
-      <svg width="500" height="200">
-      <circle cx="250" cy="100" r="30" style="fill:red;"></circle>
-      </svg>
-
+      
+        </script>
       
 
 
