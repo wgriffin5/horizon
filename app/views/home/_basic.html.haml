@@ -19,18 +19,14 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand
-            = link_to "Horizon", root_path 
-            / {:href => "root_path"} HORIZON
+          / %a.navbar-brand
+          /   = link_to "Horizon", root_path 
         #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav
-            / %li.active
-            /   %a{:href => "home#index"} Scenarios
-            / %li
-            /   %a{:href => "#about"} Assumptions
+            %li
+              =link_to "Home", root_path
             %li
               = link_to "Collaborate", hackpad_index_path
-        /.nav-collapse
     .container
       .starter-template
       %br
