@@ -39,19 +39,12 @@
           The Horizon Project
           %br Let's understand federal finances through data visualization.
     .container
-      = render :partial => '/revenues/form'
+      .canvas-holder
+        = render :partial => '/revenues/form'
     .container
-      <script> var svg = d3.select("body").append("svg");
-      / var dataInput = 50
-      var circle = svg.selectAll("circle")
-      circle.attr("cx", 50)
-      circle.attr("cy", 50)
-      circle.attr("r", 10)
-      circle.attr("fill", "blue")
-      console.log("CIRCLE")
-      / circle.exit().remove();
-      </script>
-      
+        <script> var svg = d3.select(".canvas-holder").append("svg");
+        <svg width="300" height="200"></svg>
+        </script>
 
       
 
