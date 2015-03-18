@@ -14,7 +14,7 @@ def create
   @revenue = Revenue.create revenue_params
   redirect_to root_path
     respond_to do |format|
-    format.js { render :json { @revenue.calculate}.to_json }
+      format.js { render :json { @revenue.calculate}.to_json }}
     end
 end
 
