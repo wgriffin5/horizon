@@ -1,14 +1,43 @@
  $(document).ready(function() {
 
+var WIDTH = 200, HEIGHT = 200; 
 
-  var svg = d3.select("body").append("svg").attr('width', 250).attr('heighth', 250);
-  var dataInput = 50
+var inputs = {
+      gdp: $('#revenue_gdp').val(),
+      taxtake: $('#revenue_tax_take').val(),
+      growthrate: $('#revenue_growth_rate').val()
+};
 
-  var circle = svg.append('circle')
-                  .attr('cx', 40)
-                  .attr('cy', 40 )
-                  .attr('r', 30);
 
+var create = function(d) {
+  var svg = d3.select("body").append('svg')
+              .attr('width', WIDTH)
+              .attr('height', HEIGHT);
+
+  svg.selectAll('circle')
+      .data(result)
+      .enter().append('circle')
+      .attr('cx', 50)
+      .attr('cy', 50)
+      .attr('r', result)
+      .style('fill', 'blue')
+}
+
+
+
+
+
+
+
+  // var svg = d3.select("body").append("svg").attr('width', 250).attr('heighth', 250);
+  // var dataInput = 50
+
+  // var circle = svg.selectAll('circle').data([dataInput], function(d) {return d; })
+  //                 .attr('cx', 40)
+  //                 .attr('cy', 40 )
+  //                 .attr('r', function(d) {return d; })
+  //                 .attr('fill', 'blue')
+                  // .exit().remove;
 })
   // var dataInput = (gdp*taxtake*growthrate);
   // var dataInput = 50
