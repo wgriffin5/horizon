@@ -1,6 +1,15 @@
  $(document).ready(function() {
 
-  // var svg = d3.select("body").append("svg");
+
+  var svg = d3.select("body").append("svg").attr('width', 250).attr('heighth', 250);
+  var dataInput = 50
+
+  var circle = svg.append('circle')
+                  .attr('cx', 40)
+                  .attr('cy', 40 )
+                  .attr('r', 30);
+
+})
   // var dataInput = (gdp*taxtake*growthrate);
   // var dataInput = 50
   // var circle = svg.selectAll("circle")
