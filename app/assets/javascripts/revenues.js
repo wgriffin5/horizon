@@ -4,7 +4,11 @@ var dataInput = 20;
 
 var create = function(d) {   
 
-var number = 20
+var gdp = 4
+var taxtake = 5
+var growthrate = 6
+
+var number = (+gdp * +taxtake * +growthrate);
 
 var svg = d3.select("body").append("svg")
           .attr('height', 200)
@@ -12,25 +16,14 @@ var svg = d3.select("body").append("svg")
 var circle = svg.append("circle")
               circle.attr("cx", 150)              
               circle.attr("cy", 100)
-              circle.attr("r", number );
+              circle.attr("r", number )
+              .style('fill', 'blue');
 }
 
 
 create()
 
 })
-
-
-// var svg = d3.select("body").append("svg");
-// var dataInput = 40;
-
-// var circle = svg.selectAll("circle")
-//     .data([dataInput], function(d) { return d; });
-//         .attr("cy", 70)
-//         .attr("cx", 70)
-//         .attr("r", function(d) { return d; });
-
-// circle.exit().remove()
 
 
 
@@ -43,15 +36,9 @@ create()
 // // };
 
 
-//   // var circle = svg.selectAll('circle').data([dataInput], function(d) {return d; })
-//   //                 .attr('cx', 40)
-//   //                 .attr('cy', 40 )
-//   //                 .attr('r', function(d) {return d; })
-//   //                 .attr('fill', 'blue')
-//                   // .exit().remove;
 
-//   // var dataInput = (gdp*taxtake*growthrate);
-//   //     circle.exit().remove();
+
+
   
 
 //   $('form').on('submit', function(e) {
@@ -63,7 +50,7 @@ create()
 //       dataType: 'json',
 //       data: request,
 //       success: function() {
-                create
+        // create()
 //         }
 
 
