@@ -1,19 +1,38 @@
 $(document).ready(function() {
 
+var dataInput = 20;
+
 var create = function(d) {   
-var result = 50 
+
+var number = 20
+
 var svg = d3.select("body").append("svg")
           .attr('height', 200)
-          .attr('width', 300)
+          .attr('width', 300);
 var circle = svg.append("circle")
               circle.attr("cx", 150)              
               circle.attr("cy", 100)
-              circle.attr("r", 30);
+              circle.attr("r", number );
 }
+
 
 create()
 
 })
+
+
+// var svg = d3.select("body").append("svg");
+// var dataInput = 40;
+
+// var circle = svg.selectAll("circle")
+//     .data([dataInput], function(d) { return d; });
+//         .attr("cy", 70)
+//         .attr("cx", 70)
+//         .attr("r", function(d) { return d; });
+
+// circle.exit().remove()
+
+
 
 
 
@@ -32,14 +51,6 @@ create()
 //                   // .exit().remove;
 
 //   // var dataInput = (gdp*taxtake*growthrate);
-//   // var dataInput = 50
-//   // var circle = svg.selectAll("circle")
-//   //     .data([dataInput], function(d) { return d; });
-//   //     circle.attr("cx", 50)
-//   //     circle.attr("cy", 50)
-//   //     circle.attr("r", function(d) { return d; })
-//   //     circle.attr("fill", "blue")
-//   //     console.log("CIRCLE")
 //   //     circle.exit().remove();
   
 
@@ -52,7 +63,7 @@ create()
 //       dataType: 'json',
 //       data: request,
 //       success: function() {
-
+                create
 //         }
 
 
