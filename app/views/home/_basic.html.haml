@@ -27,21 +27,17 @@
               =link_to "Home", root_path
             %li
               = link_to "Collaborate", hackpad_index_path
-    .container
+    .container-fluid#body
       .starter-template
-      %br
       %br
       %br
         %h1 Horizon
         %p.lead
           The Horizon Project
           %br Let's understand federal finances through data visualization.
-    .row
-      .container#form
-        .col-md-4
-          = render :partial => '/revenues/form'
-      .container#canvas
-        .col-md-8
+      .row.col-md-4
+        = render :partial => '/revenues/form'
+      .row.col-md-8 
     
       
 
