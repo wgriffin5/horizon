@@ -1,7 +1,9 @@
- $(document).ready(function() {
+$(document).ready(function() {
 
 var WIDTH = 200, HEIGHT = 200; 
 
+
+var result = 50
 var inputs = {
       gdp: $('#revenue_gdp').val(),
       taxtake: $('#revenue_tax_take').val(),
@@ -51,7 +53,7 @@ var create = function(d) {
   //     circle.exit().remove();
   
 
-  // $('#form').on('submit', function(e) {
+  // $('form').on('submit', function(e) {
   //   event.preventDefault();
   //   var inputs = {
   //     name: $('#revenue_name').val(),

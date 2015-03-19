@@ -1,4 +1,4 @@
-= form_for @newrevenue, id: "form",  url: revenues_path(@revenue) do |revenue|
+= form_for @newrevenue, class: "form",  url: revenues_path(@revenue) do |revenue|
   %br
   = revenue.label :name
   = revenue.text_field :name , id:'name'
