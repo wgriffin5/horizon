@@ -21,16 +21,14 @@ $(document).ready(function() {
                 circle.attr("cy", 200)
                 circle.attr("r", number )
                 .style('fill', 'blue')
-                circle.exit().remove();
+                
   }
 
 // create()
 
 
     $('.circle-button').on('click', function() {
-      event.preventDefault
       create()
-      console.log(CLICKO)
   })
 
       // event.preventDefault()
