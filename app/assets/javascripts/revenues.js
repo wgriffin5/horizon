@@ -21,8 +21,8 @@ $(document).ready(function() {
       console.log('REVENUEEE')
       var name = $('#name').val();
       var gdp = $('#gdp').val();
-      var taxtake = $('#tax_take').val();
-      var growthrate = $('#growth_rate').val();
+      var taxtake = $('#taxtake').val();
+      var growthrate = $('#growthrate').val();
       console.log('INPUTS')
       $.ajax({
         type: 'POST',
