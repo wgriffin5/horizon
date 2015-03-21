@@ -23,7 +23,9 @@ var create = function(d) {
   }
   
   
-
+$('a').click(function(event){
+    event.preventDefault(); 
+  });
 
   $('.revenue-button').on('click', function() {
       console.log('REVENUEEE')
