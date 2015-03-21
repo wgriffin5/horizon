@@ -1,21 +1,29 @@
 $(document).ready(function() {
 
-  var create = function() {   
+var create = function(d) {
+ 
+  var gdp = $('#gdp').val();
+  var taxtake = $('#taxtake').val();
+  var growthrate = $('#growthrate').val();
 
-  var number = 30
-  
+
+ var number = gdp*taxtake*growthrate
 
   var svg = d3.select("#body").append("svg")
+            .attr('id','svg_id')
             .attr('height', 400)
             .attr('width', 400);
 
   var circle = svg.append("circle")
+                circle.attr('id', 'circle_id')
                 circle.attr("cx", 200)              
                 circle.attr("cy", 200)
                 circle.attr("r", number)
                 .style('fill', 'blue');
   }
-  // create()
+  
+  
+
 
   $('.revenue-button').on('click', function() {
       console.log('REVENUEEE')
@@ -30,8 +38,9 @@ $(document).ready(function() {
         // contentType: 'application/json',
         dataType: 'json',
         data: {revenue: { name: name, gdp: gdp , tax_take: taxtake , growth_rate: growthrate}},
-       success: function() { 
+       complete: function() { 
         create()
+      
         
       }
 
