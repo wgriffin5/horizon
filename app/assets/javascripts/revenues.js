@@ -23,11 +23,12 @@ var create = function(d) {
   }
   
   
-$('a').click(function(event){
-    event.preventDefault(); 
-  });
+// $('a').click(function(event){
+//     event.preventDefault(); 
+//   });
 
-  $('.revenue-button').on('click', function() {
+  $('a').click(function(event) {
+      event.preventDefault();
       console.log('REVENUEEE')
       var name = $('#name').val();
       var gdp = $('#gdp').val();
@@ -42,11 +43,9 @@ $('a').click(function(event){
         data: {revenue: { name: name, gdp: gdp , tax_take: taxtake , growth_rate: growthrate}},
        complete: function() { 
         create()
-      
-        
-      }
+       }
 
-       });
+      });
 
 
   })
