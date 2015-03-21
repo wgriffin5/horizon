@@ -32,22 +32,12 @@ $(document).ready(function() {
         data: {revenue: { name: name, gdp: gdp , tax_take: taxtake , growth_rate: growthrate}},
        success: function() { 
         create()
+        
       }
+
        });
 
-      // console.log("button");
+
   })
   
 })
-
-
-
-
-
-
-// Use an AJAX post to submit your form
-// $.post( 
-//      sucess: function() {
-//        draw your circle
-//      }
-// )
