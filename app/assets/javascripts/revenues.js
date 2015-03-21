@@ -28,24 +28,33 @@ $(document).ready(function() {
                 circle.attr("r", number)
                 .style('fill', 'blue');
   }
+  create()
 
-
-  $('.button').on('click', function() {
-      event.preventDefault();
-      $.ajax('/revenues.json', {
+  $('.revenue-button').on('click', function() {
+      console.log('REVENUEEE')
+      var name = $('#revenue_name').text();
+      var gdp = $('#revenue_gdp').text();
+      var taxtake = $('#revenue_tax_take').text();
+      var growthrate = $('#revenue_growth_rate').text();
+      $.ajax({
         type: 'POST',
-        contentType: 'application/json',
+        url: '/revenues.json',
+        // contentType: 'application/json',
         dataType: 'json',
-        data: { format: 'json'},
+        data: {revenue: { revenue_name: name, revenue_gdp: gdp , revenue_tax_take: taxtake , revenue_growth_rate: growthrate}},
        success: function() { 
         create()
       }
        });
 
       // console.log("button");
-})
+  })
   
 })
+
+
+
+
 
 
 // Use an AJAX post to submit your form

@@ -1,21 +1,16 @@
-= form_for @newrevenue, class: "form",  url: revenues_path(@revenue) do |revenue|
-  %br
-  = revenue.label :name
-  = revenue.text_field :name , id:'name'
-  %br
-  = revenue.label :gdp
-  = revenue.text_field :gdp , id:'gdp'
-  %br
-  = revenue.label :tax_take
-  = revenue.text_field :tax_take, id:'tax_take'
-  %br
-  = revenue.label :growth_rate
-  = revenue.text_field :growth_rate, id:'growth_rate'
-  %br
-  = revenue.submit 'Input Values', :class => 'button'
 
-
-  
-
-/ %a.button-primary.circle-button
-/   Create Circle
+%br
+= label_tag :name
+= text_field_tag :name , id:'name'
+%br
+= label_tag :gdp
+= text_field_tag :gdp , id:'gdp'
+%br
+= label_tag :tax_take
+= text_field_tag :tax_take, id:'tax_take'
+%br
+= label_tag :growth_rate
+= text_field_tag :growth_rate, id:'growth_rate'
+%br
+%a.button-primary.revenue-button
+  Create Circle
