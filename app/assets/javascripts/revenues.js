@@ -2,20 +2,7 @@ $(document).ready(function() {
 
   var create = function() {   
 
-  var number = 150
-  // var gdp = $('#revenue_gdp').val(),
-  // var taxtake = $('#revenue_tax_take').val(),
-  // var growthrate = $('#revenue_growth_rate').val();
-  // var calculate = function(c) {
-  //   var gdp = 3
-  //   var taxtake = 5
-  //   var growthrate = 12
-  //   var result = ()
-
-  // } { result r; };
-  
-
-  // var radius = calculate() 
+  var number = 30
   
 
   var svg = d3.select("#body").append("svg")
@@ -28,20 +15,21 @@ $(document).ready(function() {
                 circle.attr("r", number)
                 .style('fill', 'blue');
   }
-  create()
+  // create()
 
   $('.revenue-button').on('click', function() {
       console.log('REVENUEEE')
-      var name = $('#revenue_name').text();
-      var gdp = $('#revenue_gdp').text();
-      var taxtake = $('#revenue_tax_take').text();
-      var growthrate = $('#revenue_growth_rate').text();
+      var name = $('#name').val();
+      var gdp = $('#gdp').val();
+      var taxtake = $('#tax_take').val();
+      var growthrate = $('#growth_rate').val();
+      console.log('INPUTS')
       $.ajax({
         type: 'POST',
         url: '/revenues.json',
         // contentType: 'application/json',
         dataType: 'json',
-        data: {revenue: { revenue_name: name, revenue_gdp: gdp , revenue_tax_take: taxtake , revenue_growth_rate: growthrate}},
+        data: {revenue: { name: name, gdp: gdp , tax_take: taxtake , growth_rate: growthrate}},
        success: function() { 
         create()
       }

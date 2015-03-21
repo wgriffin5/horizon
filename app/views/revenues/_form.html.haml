@@ -1,16 +1,23 @@
 
 %br
 = label_tag :name
-= text_field_tag :name , id:'name'
+%input#name{:type => "text"}
+/ = text_field_tag :gdp, id:'gdp'
 %br
 = label_tag :gdp
-= text_field_tag :gdp , id:'gdp'
+%input#gdp{:type => "text"}
+/ = text_field_tag :gdp, id:'gdp'
 %br
 = label_tag :tax_take
-= text_field_tag :tax_take, id:'tax_take'
+%input#taxtake{:type => "text"}
+/ = text_field_tag :tax_take, id:'tax_take'
 %br
 = label_tag :growth_rate
-= text_field_tag :growth_rate, id:'growth_rate'
+%input#growthrate{:type => "text"}
+/ = text_field_tag :growth_rate, id:'growth_rate'
 %br
 %a.button-primary.revenue-button
   Create Circle
+
+
+  
