@@ -20,7 +20,7 @@ var create = function(d) {
                 circle.attr("cy", 200)
                 circle.attr("r", number)
                 .style('fill', 'blue');
-  }
+}
   
   
 // $('a').click(function(event){
@@ -48,9 +48,6 @@ var create = function(d) {
 
       });
 
+  })
 
-  
-
-
-  
 })
