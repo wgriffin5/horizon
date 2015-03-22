@@ -1,40 +1,38 @@
-%html{:lang => "en-US"}
-  %title Simple Range Input Slider With Output
-  %head
-    %link{:href => "http://fonts.googleapis.com/css?family=Quantico", :rel => "stylesheet", :type => "text/css"}
-  .container
-    .slider
-      %input{:max => "100", :min => "0", :onchange => "rangevalue.value=value", :type => "range"}/
-      %output#rangevalue 5
+/ %html{:lang => "en-US"}
+/   %title Simple Range Input Slider With Output
+/   %head
+/     %link{:href => "http://fonts.googleapis.com/css?family=Quantico", :rel => "stylesheet", :type => "text/css"}
+/   .container
+/     .slider
+/       %input{:max => "100", :min => "0", :onchange => "rangevalue.value=value", :type => "range"}/
+/       %output#rangevalue 5
 
 
 
-/ %br
-/ = label_tag :name
-/ %input#name{:type => "text"}
-/ / = text_field_tag :gdp, id:'gdp'
-/ %br
-/ = label_tag :gdp
-/ %input#gdp{:type => "text"}
-/ / = text_field_tag :gdp, id:'gdp'
-/ %br
-/ = label_tag :tax_take
-/ %input#taxtake{:type => "text"}
-/ / = text_field_tag :tax_take, id:'tax_take'
-/ %br
-/ = label_tag :growth_rate
-/ %input#growthrate{:type => "text"}
-/ / = text_field_tag :growth_rate, id:'growth_rate'
-/ %br
-/ / %a.button-primary.revenue-button
-/ /   Create Circle
+%br
+= label_tag :name
+%input#name{:type => "text"}
+/ = text_field_tag :gdp, id:'gdp'
+%br
+= label_tag :gdp
+%input#gdp{:type => "text"}
+/ = text_field_tag :gdp, id:'gdp'
+%br
+= label_tag :tax_take
+%input#taxtake{:type => "text"}
+/ = text_field_tag :tax_take, id:'tax_take'
+%br
+= label_tag :growth_rate
+%input#growthrate{:type => "text"}
+/ = text_field_tag :growth_rate, id:'growth_rate'
+%br
 
 
 
-/ %a.btn-3d.green{:href => "#"} Present Value
+%a.btn-3d.green{:href => "#"} Present Value
 
 
-/ %a.btn-3d.red{:href => "#"} Current Debt
+%a.btn-3d.red{:href => "#"} Current Debt
 
 
 
