@@ -2,90 +2,84 @@ $(document).ready(function() {
 
 
 
+var gdpCircle = function(d) {
 
-// var gdpCircle = function(d) {
-
-//   var gdp = $('#gdp').val();
+  var gdp = $('#gdp').val();
   
-//   var gdpRadius = gdp
+  var gdpRadius = gdp
 
-// var svg = d3.select("#body").append("svg")
-//             .attr('id','svg_id')
-//             .attr('height', 400)
-//             .attr('width', 400);
-
-//   var circle = svg.append("circle")
-
-//                 circle.attr('id', 'circle_id')
-//                 circle.attr("cx", 200)              
-//                 circle.attr("cy", 200)
-//                 circle.attr("r", gdpRadius)
-//                 .style('fill', rgba(0, 102, 255, 0.3) );
-
-// /// debt/gdp pie chart 
-// }
+ var svg = $('#svg')
 
 
-// var debtCircle = function(d) {
+  var circle = svg.append("circle")
+                circle.attr('id', 'gdpCircle')
+                circle.attr("cx", 200)              
+                circle.attr("cy", 200)
+                circle.attr("r", gdpRadius)
+                .style('fill', 'rgba(0, 102, 255, 0.3)' );
 
-//   var gdp = $('#gdp').val();
-//   var debt = (gdp * .6)
+/// debt/gdp pie chart 
+}
 
-//   var svg = d3.select("#body").append("svg")
-//             .attr('id','svg_id')
-//             .attr('height', 400)
-//             .attr('width', 400);
 
-//   var circle = svg.append("circle").enter()
+var debtCircle = function(d) {
 
-//                 circle.attr('id', 'circle_id')
-//                 circle.attr("cx", 200)              
-//                 circle.attr("cy", 200)
-//                 circle.attr("r", debt)
-//                 .style('fill', 'red');
-// }
+  var gdp = $('#gdp').val();
+  var debt = (gdp * .6)
+
+  var svg = $('#svg')
+  
+
+  var circle = svg.append("circle")
+                circle.attr('id', 'debtCircle')
+                circle.attr("cx", 200)              
+                circle.attr("cy", 200)
+                circle.attr("r", debt)
+                .style('fill', 'rgba(0, 240, 0, .5)');
+}
 
 var present = function(d) {
  
 
-var svg = d3.select("body").append("svg");
-var dataInput = 40;
+// var svg = d3.select("body").append("svg");
+// var dataInput = 40;
 
-var circle = svg.selectAll("circle")
-    .data([dataInput], function(d) { return d; });
-        .attr("cy", 70)
-        .attr("cx", 70)
-        .attr("r", function(d) { return d; });
+// var circle = svg.selectAll("circle")
+//     .data([dataInput], function(d) { return d; });
+//         .attr("cy", 70)
+//         .attr("cx", 70)
+//         .attr("r", function(d) { return d; });
 
-circle.exit().remove()
-
-
-
-//   var gdp = $('#gdp').val();
-//   var taxtake = $('#taxtake').val();
-//   var growthrate = $('#growthrate').val();
-
-//   var left = (gdp * (taxtake/100))/((taxtake/100)-(growthrate/100))
-
-//   var right = 1 - ((1 + (growthrate/100))/(1 + (taxtake/100)))^1000
-
-//   var revenueRadius = (left * right)/250
-
-//   // ((gdp*(taxtake/100))/((taxtake/100)-(growthrate/100)} * {1 - ((1+(growthrate/100))/(1+(taxtake/100)))^1000}
+// circle.exit().remove()
 
 
-//   var svg = d3.select("#body").append("svg")
-//             .attr('id','svg_id')
-//             .attr('height', 400)
-//             .attr('width', 400);
 
-//   var circle = svg.append("circle")
-//                 circle.attr('id', 'circle_id')
-//                 circle.attr("cx", 200)              
-//                 circle.attr("cy", 200)
-//                 circle.attr("r", revenueRadius)
-//                 .style('fill', 'blue');
+  var gdp = $('#gdp').val();
+  var taxtake = $('#taxtake').val();
+  var growthrate = $('#growthrate').val();
 
+  var left = (gdp * (taxtake/100))/((taxtake/100)-(growthrate/100))
+
+  var right = 1 - ((1 + (growthrate/100))/(1 + (taxtake/100)))^1000
+
+  var revenueRadius = (left * right)/250
+
+  // ((gdp*(taxtake/100))/((taxtake/100)-(growthrate/100)} * {1 - ((1+(growthrate/100))/(1+(taxtake/100)))^1000}
+
+
+  var svg = d3.select("#body")
+            .append("svg")
+            .attr('id','svg')
+            .attr('height', 400)
+            .attr('width', 400);
+
+  var circle = svg.append("circle")
+                circle.attr('id', 'revenueCircle')
+                circle.attr("cx", 200)              
+                circle.attr("cy", 200)
+                circle.attr("r", revenueRadius)
+                .style('fill', 'rgba( 0, 0, 350, 0.5)');
+                // .transform()
 }
 
 // var debtButton = function(d) {
@@ -126,18 +120,19 @@ circle.exit().remove()
 
   // })
 
+$('#gdp-button').click(function(event) {
+    event.preventDefault();
+    console.log('GDPPP')
+    gdpCircle()
+  })
 
-  $('#debt-button').click(function(event) {
+$('#debt-button').click(function(event) {
     event.preventDefault();
     console.log('DEBT')
     debtCircle()
   })
 
-  $('#gdp-button').click(function(event) {
-    event.preventDefault();
-    console.log('GDPPP')
-    gdpCircle()
-  })
+  
 
 })
 
