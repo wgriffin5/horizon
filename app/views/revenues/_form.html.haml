@@ -1,39 +1,33 @@
-/ %html{:lang => "en-US"}
-/   %title Simple Range Input Slider With Output
-/   %head
-/     %link{:href => "http://fonts.googleapis.com/css?family=Quantico", :rel => "stylesheet", :type => "text/css"}
-/   .container
-/     .slider
-/       %input{:max => "100", :min => "0", :onchange => "rangevalue.value=value", :type => "range"}/
-/       %output#rangevalue 5
 
 
-
+.input-group
 %br
-= label_tag :name
-%input#name{:type => "text"}
-/ = text_field_tag :gdp, id:'gdp'
+  .input-group-addon
+    = label_tag :name
+  .form-control
+    %input#name{:type => "text"}
 %br
-= label_tag :gdp
-%input#gdp{:type => "text"}
-/ = text_field_tag :gdp, id:'gdp'
+  .input-group-addon
+    = label_tag :gdp
+  .form-control
+    %input#gdp{:type => "text"}
 %br
-= label_tag :tax_take
-%input#taxtake{:type => "text"}
-/ = text_field_tag :tax_take, id:'tax_take'
+  .input-group-addon
+    = label_tag :tax_take
+  .form-control
+    %input#taxtake{:type => "text"}
 %br
-= label_tag :growth_rate
-%input#growthrate{:type => "text"}
-/ = text_field_tag :growth_rate, id:'growth_rate'
-%br
+  .input-group-addon
+    = label_tag :growth_rate
+  .form-control
+    %input#growthrate{:type => "text"}
+   
 
+%a.btn-3d.blue#revenue-button{:href => "#"} Present Value
 
+%a.btn-3d.red#debt-button{:href => "#"} Current Debt
 
-%a.btn-3d.green{:href => "#"} Present Value
-
-
-%a.btn-3d.red{:href => "#"} Current Debt
-
+%a.btn-3d.green#gdp-button{:href => "#"} GDP
 
 
 / %input#r1{:max => "12", :min => "1", :step => "1", :type => "range", :value => "10"}/
