@@ -14,6 +14,7 @@ var gdp = 18
 var taxtake = $('#nTaxtake').val(); 
 var growthrate = $('#nGrowthrate').val();
 
+var val = $('#nTaxtake').slider("option", "value");
 
 //////do math 
 var gauche = (( gdp * taxtake/100))/((taxtake/100)-(growthrate/100))
@@ -50,7 +51,8 @@ d3.select("#nTaxtake").on("input", function() {
 console.log('READTAXTAKE')
 
 // read a change in the growthrate input
-d3.select("#nGrowthrate").on("input", function() {
+d3.select("#nGrowthrate").on("input", function(e) {
+  console.log(e)
   updateGrowthrate(+this.value);
 });
 console.log('READGROWTH')
@@ -88,13 +90,14 @@ console.log('VALUEUPDATE')
 
 ////// MUST CHANGE CLICK EVENT
 
-// update circle upon input range changes 
-d3.select("#nTaxtake").on("input", function() {
+//update circle upon input range changes 
+d3.select("#nTaxtake").on("ondragend", function(e) {
+  console.log($(this))
   update(+this.value);
 });
 
 
-d3.select('#nGrowthrate').on('input', function() {
+d3.select('#nGrowthrate').on('ondragend', function() {
   update(+this.value);
 });
 
@@ -103,7 +106,9 @@ update(10);
 console.log('INITIALRADIUS')
 
 // update the elements
+var curRad = 0;
 function update(nRadius) {
+  curRad += nRadius
 
   // adjust the text on the range slider
   d3.select("#nTaxtake-value").text(nTaxtake);
@@ -114,7 +119,7 @@ function update(nRadius) {
 
   // update the circle radius
   svg.selectAll("circle") 
-    .attr("r", nRadius);
+    .attr("r", curRad);
 }
 console.log('UPDATERADIUS')
 
