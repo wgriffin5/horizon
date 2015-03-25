@@ -8,13 +8,7 @@ var height = 400;
 ////  PRESENT VALUE circle
 
 /// set values ??????? might be dead end with following function.
-$(function() {
 
-  var nRadius = {}
-  nRadius.hello = revenue;
-
-  $('#revenue').text(nRadius.hello);
-})
 
 var gdp = 18   
 var taxtake = $('#nTaxtake').val(); 
@@ -27,6 +21,7 @@ var droit = 1 - ((1 + (growthrate/100))/(1 + (taxtake/100)))^1000
 
 var revenue = (gauche * droit) 
 
+var nRadius = revenue
 
 
 
@@ -91,7 +86,8 @@ console.log('VALUEUPDATE')
   console.log('UPDATEGROWTH')
 
 
-//////// MUST CHANGE CLICK EVENT
+////// MUST CHANGE CLICK EVENT
+
 // update circle upon input range changes 
 d3.select("#nTaxtake").on("input", function() {
   update(+this.value);
@@ -106,7 +102,7 @@ d3.select('#nGrowthrate').on('input', function() {
 update(10);
 console.log('INITIALRADIUS')
 
-// // update the elements
+// update the elements
 function update(nRadius) {
 
   // adjust the text on the range slider
