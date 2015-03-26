@@ -1,50 +1,55 @@
-%p
-  %label{:for => 'nTaxtake', :style => 'display: inline-block; width: 240px; text-align: right'}
-    Tax Take =
-    %span#nTaxtake-value …
-  %input#nTaxtake{:value => '15', :max => '30', :min => '10', :step => '0.05', :type => 'range'}
-%p
-  %label{:for => 'nGrowthrate', :style => 'display: inline-block; width: 240px; text-align: right'}
-    Growth Rate =
-    %span#nGrowthrate-value …
-  %input#nGrowthrate{:value => '1.0', :max => '6.0', :min => '0.5', :step => '0.05', :type => 'range'}
+
+/ %p
+/   %label{:for => 'nTaxtake', :style => 'display: inline-block; width: 240px; text-align: right'}
+/     Tax Take =
+/     %span#nTaxtake-value …
+/   %input#nTaxtake{:value => '15', :max => '30', :min => '10', :step => '0.05', :type => 'range'}
+/ %p
+/   %label{:for => 'nGrowthrate', :style => 'display: inline-block; width: 240px; text-align: right'}
+/     Growth Rate =
+/     %span#nGrowthrate-value …
+/   %input#nGrowthrate{:value => '1.0', :max => '6.0', :min => '0.5', :step => '0.05', :type => 'range'}
 
 
 
+/ %input#nTaxtake{:max => "30", :min => "10", :step => "0.1", :type => "range", :value => "18"}/
+/ %input#field-id{:type => "text"}/
+/ %button#calculate-button Calculate
 
-
-
+/ %input#test{:max => "30", :min => "10", :step => "0.5", :type => "range", :value => "18"}/
+/ %input.changeIt{:type => "text"}/
+/ %button.changeRange change
 
 
 
 
 //////////
-/ .input-group
-/ %br
-/   .input-group-addon
-/     = label_tag :name
-/   .form-control
-/     %input#name{:type => "text"}
-/ %br
-/   .input-group-addon
-/     = label_tag :gdp
-/   .form-control
-/     %input#gdp{:type => "text"}
-/ %br
-/   .input-group-addon
-/     = label_tag :tax_take
-/   .form-control
-/     %input#taxtake{:type => "text"}
-/ %br
-/   .input-group-addon
-/     = label_tag :growth_rate
-/   .form-control
-/     %input#growthrate{:type => "text"}
+.input-group
+%br
+  .input-group-addon
+    = label_tag :name
+  .form-control
+    %input#name{:type => "text"}
+%br
+  .input-group-addon
+    = label_tag :gdp
+  .form-control
+    %input#gdp{:type => "text"}
+%br
+  .input-group-addon
+    = label_tag :tax_take
+  .form-control
+    %input#taxtake{:type => "text"}
+%br
+  .input-group-addon
+    = label_tag :growth_rate
+  .form-control
+    %input#growthrate{:type => "text"}
    
 
-/ %a.btn-3d.blue#revenue-button{:href => "#"} Present Value
+%a.btn-3d.blue#revenue-button{:href => "#"} Present Value
 
-/ %a.btn-3d.red#debt-button{:href => "#"} Current Debt
+%a.btn-3d.red#refresh-button{:href => "/"} Reset
 
 / %a.btn-3d.green#gdp-button{:href => "#"} GDP
 

@@ -1,161 +1,166 @@
 $(document).ready(function() {
 
-//////
 
-var draw = function() {
+////// 
 
-var width = 400;
-var height = 400;
+// $(function() {
+//   $("#nTaxtake").on("change", function() {
+//     var number = 
+//       $(this).val();
+      
+//   })
+  
+// $('#calculate-button').on('click', function() {
+//     draw()
+    
 
+//     calculate()
 
-//// draw svg 
-var svg = d3.select("body")
-      .append("svg")
-      .attr("width", width)    
-      .attr("height", height); 
-      console.log('SVG');
+  
+  
+// });
+// }
 
-// draw initial circle
-svg.append("circle")
-  .attr("cx", 200)
-  .attr("cy", 200) 
-  .style('fill', "none" ) 
-  .style('stroke','rgba( 0, 20, 230, 0.5)')   
-  .attr("r", 60);
-  console.log('initCIRCLE');
-//////
+// var calculate = function() {
 
-}
+//   ///set variables for function
+//   var gdp = 18   
+//   var ntaxtake = $('#nTaxtake').val(); 
+//   var ngrowthrate = $('#nGrowthrate').val();
 
+//   //////do math 
+//   var gauche = (( gdp * taxtake/100))/((taxtake/100)-(growthrate/100))
+//   var droit = 1 - ((1 + (growthrate/100))/(1 + (taxtake/100)))^1000
 
-
-var calculate = function() {
-
-  var gdp = 18   
-  var taxtake = $('#nTaxtake').val(); 
-  var growthrate = $('#nGrowthrate').val();
-
-
-
-  //////do math 
-  var gauche = (( gdp * taxtake/100))/((taxtake/100)-(growthrate/100))
-  var droit = 1 - ((1 + (growthrate/100))/(1 + (taxtake/100)))^1000
-
-  var revenue = (gauche * droit) 
-
-
-}
+//   var revenue = (gauche * droit) 
+// }
  
 
+ 
+// var draw = function() {
 
+// var width = 400;
+// var height = 400;
 
-//// draw svg
+// //// draw svg 
+// var svg = d3.select("body")
+//       .append("svg")
+//       .attr("width", width)    
+//       .attr("height", height); 
+//       console.log('SVG');
 
+// // draw initial circle
+// svg.append("circle")
+//   .attr("cx", 200)
+//   .attr("cy", 200) 
+//   .style('fill', 'rgba( 0, 20, 230, 0.5)' ) 
+//   .style('stroke','rgba( 0, 20, 230, 0.5)')   
+//   .attr("r", revenue);
+//   console.log('initCIRCLE');
+// //////
 
 // }
 
-// read a change in the taxtake input
-d3.select("#nTaxtake").on("input", function() {
-  taxTake = $(this).val();
-  growthRate = $('#nGrowthrate').val();
-  var banana = taxTake + growthRate
-  update(banana);
-  updateTaxtake(+$(this).val());
-
-console.log('BANANA')
-});
-// read a change in the growthrate input
-d3.select("#nGrowthrate").on("input", function() {
-  growthRate = $(this).val();
-  taxTake = $('#nGrowthrate').val();
-  var strawberry = growthRate + taxTake
-  update(strawberry);
-  console.log('STRAWBERRY')
-  updateGrowthrate(+$(this).val());
-
-console.log('STRAWBERRY')
-});
-// update the values
-// updateTaxtake(10);
-// updateGrowthrate(0.5);
-// console.log('VALUEUPDATE')
 
 
 
-// Update the taxtake attributes
-  function updateTaxtake(nTaxtake) {
-
-    // adjust the text on the range slider
-    d3.select("#nTaxtake-value").text(nTaxtake);
-    d3.select("#nTaxtake").property("value", nTaxtake);
-
-    //update the Taxtake variable
-    // var taxtake = (+this.value)
-
-  
-  console.log('UPDATETAX')
-}
-// Update the growthrate param
-  function updateGrowthrate(nGrowthrate) {
-    console.log("growth rate: ", nGrowthrate);
-    // adjust the text on the range slider
-    d3.select("#nGrowthrate-value").text(nGrowthrate);
-    d3.select("#nGrowthrate").property("value", nGrowthrate);
-
-    ////update the Growthrate variable
-    // var growthrate = (+this.value);
-  
-  console.log('UPDATEGROWTH')
-}
-
-////// MUST CHANGE CLICK EVENT
-
-//update circle upon input range changes 
-d3.select("#nTaxtake").on("change", function(e) {
-  console.log($(this))
-  update(+$(this).val());
-});
 
 
-d3.select('#nGrowthrate').on('change', function() {
-  console.log($(this))
-  update(+$(this).val());
-});
 
-// // Initial starting radius of the circle 
-// update(10);
-// console.log('INITIALRADIUS')
 
-// update Radius
-// var curRad = 10;
-function update(nRadius) {
-  // curRad += nRadius
 
-  // adjust the text on the range slider
-  d3.select("#nTaxtake-value").text(nTaxtake);
-  d3.select("#nTaxtake").property("value", nTaxtake);
-
-  d3.select('#nGrowthrate-value').text(nGrowthrate);
-  d3.select('#nGrowthrate').property('value', nGrowthrate);
-
-  // update the circle radius
-  svg.selectAll("circle") 
-    .attr("r", nRadius);
-    console.log('UPDATERADIUS')
-}
-
-// $(function() {
-//   $('#test').on('change'), function() {
-//     $(this).closest('body').append($(this).val())
-//   });
-
-//   $('.changeRange').on('click', 
-//     function() {
-//       var theValue =
-//     $('.changeIt').val();
-//         $('#test').val(theValue);
-//     })
+// // read a change in the taxtake input
+// d3.select("#nTaxtake").on("input", function() {
+//   taxTake = $(this).val();
+//   growthRate = $('#nGrowthrate').val();
+//   updateTaxtake(+$(this).val());
+//   console.log('BANANA')
 // });
+
+
+// ///// read a change in the growthrate input
+// d3.select("#nGrowthrate").on("input", function() {
+//   growthRate = $(this).val();
+//   taxTake = $('#nTaxtake').val();
+//   console.log('STRAWBERRY')
+//   updateGrowthrate(+$(this).val());
+//   console.log('STRAWBERRY')
+
+// });
+
+// // update the values
+// // updateTaxtake(10);
+// // updateGrowthrate(0.5);
+// // console.log('VALUEUPDATE')
+
+
+
+// // Update the taxtake attributes
+// function updateTaxtake(nTaxtake) {
+
+//     // adjust the text on the range slider
+//     d3.select("#nTaxtake-value").text(nTaxtake);
+//     d3.select("#nTaxtake").property("value", nTaxtake);
+
+//     //update the Taxtake variable
+//     // var taxtake = (+this.value)
+
+  
+//   console.log('UPDATETAX')
+// }
+// // Update the growthrate param
+// function updateGrowthrate(nGrowthrate) {
+//     console.log("growth rate: ", nGrowthrate);
+//     // adjust the text on the range slider
+//     d3.select("#nGrowthrate-value").text(nGrowthrate);
+//     d3.select("#nGrowthrate").property("value", nGrowthrate);
+
+//     ////update the Growthrate variable
+//     // var growthrate = (+this.value);
+  
+//   console.log('UPDATEGROWTH')
+// }
+
+// ////// MUST CHANGE CLICK EVENT
+
+// //update circle upon input range changes 
+// d3.select("#nTaxtake").on("change", function(e) {
+//   console.log($(this))
+//   update(+$(this).val());
+// });
+
+
+// d3.select('#nGrowthrate').on('change', function() {
+//   console.log($(this))
+//   update(+$(this).val());
+// });
+
+// //// Initial starting radius of the circle 
+// update(30);
+
+
+// /// when input range changes update circle
+
+// function update(nRadius) {
+
+
+//   // adjust the text on the range slider
+//   d3.select("#nTaxtake-value").text(nTaxtake);
+//   d3.select("#nTaxtake").property("value", nTaxtake);
+
+
+//   ///adjust text on range slider 
+//   d3.select('#nGrowthrate-value').text(nGrowthrate);
+//   d3.select('#nGrowthrate').property('value', nGrowthrate);
+
+//   // update the circle radius
+//   svg.selectAll("circle") 
+//     .attr("r", nRadius);
+//     console.log('UPDATERADIUS')
+// }
+
+
+
 
 
 /////////////////////////////////////////////
@@ -296,28 +301,28 @@ function update(nRadius) {
 
 //////////////   PRESENT REVENUE FUNCTION
 
-// var present = function(d) {
+var present = function(d) {
  
 
 
-// var gdp = $('#gdp').val();
-// var taxtake = $('#taxtake').val();
-// var growthrate = $('#growthrate').val();
+var gdp = $('#gdp').val();
+var taxtake = $('#taxtake').val();
+var growthrate = $('#growthrate').val();
 
-// var left = (gdp * (taxtake/100))/((taxtake/100)-(growthrate/100))
+var left = (gdp * (taxtake/100))/((taxtake/100)-(growthrate/100))
 
-// var right = 1 - ((1 + (growthrate/100))/(1 + (taxtake/100)))^1000
+var right = 1 - ((1 + (growthrate/100))/(1 + (taxtake/100)))^1000
 
-// var revenueRadius = (left * right)/250
+var revenueRadius = (left * right)/250
 
 
-//   // ((gdp*(taxtake/100))/((taxtake/100)-(growthrate/100)} * {1 - ((1+(growthrate/100))/(1+(taxtake/100)))^1000}
+  // ((gdp*(taxtake/100))/((taxtake/100)-(growthrate/100)} * {1 - ((1+(growthrate/100))/(1+(taxtake/100)))^1000}
 
 // var svg = d3.select("body").selectAll("svg");
 // var circle = svg.selectAll("circle")
 //     .data([revenueRadius], function(d) { return d; });
 
-// circle.enter().append("circle")
+//    circle.enter().append("circle")
 //     .attr("cy", 60)
 //     .attr("cx", 60)
 //     .style('fill', 'rgba( 0, 0, 350, 0.5)')
@@ -325,24 +330,6 @@ function update(nRadius) {
 
 // circle.exit().remove();
 
-            // .append("svg")
-            // .attr('id','svg')
-            // .attr('height', 400)
-            // .attr('width', 400);
-
-  // var circle = svg.append("circle")
-  //               circle.attr('id', 'revenueCircle')
-  //               circle.attr("cx", 200)              
-  //               circle.attr("cy", 200)
-  //               circle.attr("r", revenueRadius)
-  //               .style('fill', 'rgba( 0, 0, 350, 0.5)');
-                // .transform()
-
-                // console.log(svg.enter())
-// }
-
-
-//   var svg = d3.select("#body")
 //             .append("svg")
 //             .attr('id','svg')
 //             .attr('height', 400)
@@ -354,39 +341,53 @@ function update(nRadius) {
 //                 circle.attr("cy", 200)
 //                 circle.attr("r", revenueRadius)
 //                 .style('fill', 'rgba( 0, 0, 350, 0.5)');
-//                 // .transform()
+//                 .transform()
 
 //                 console.log(svg.enter())
 // }
 
 
+  var svg = d3.select("#body").append("svg")
+            .attr('id','svg_id')
+            .attr('height', 400)
+            .attr('width', 400);
+
+  var circle = svg.append("circle")
+                circle.attr('id', 'circle_id')
+                circle.attr("cx", 200)              
+                circle.attr("cy", 200)
+                circle.attr("r", revenueRadius)
+                .style('fill', 'rgba( 0, 0, 350, 0.5)');
+               
+}
+
+
 //////////////////// REVENUE BUTTON
 
 
-//   $('#revenue-button').click(function(event) {
-//       event.preventDefault();
-//       console.log('REVENUEEE')
-//       var name = $('#name').val();
-//       var gdp = $('#gdp').val();
-//       var taxtake = $('#taxtake').val();
-//       var growthrate = $('#growthrate').val();
-//       console.log('INPUTS')
-//       $.ajax({
-//         type: 'POST',
-//         url: '/revenues.json',
-//         // contentType: 'application/json',
-//         dataType: 'json',
-//         data: {revenue: { name: name, gdp: gdp , tax_take: taxtake , growth_rate: growthrate}},
-//        complete: function() { 
-//         present()
+  $('#revenue-button').click(function(event) {
+      event.preventDefault();
+      console.log('REVENUEEE')
+      var name = $('#name').val();
+      var gdp = $('#gdp').val();
+      var taxtake = $('#taxtake').val();
+      var growthrate = $('#growthrate').val();
+      console.log('INPUTS')
+      $.ajax({
+        type: 'POST',
+        url: '/revenues.json',
+        // contentType: 'application/json',
+        dataType: 'json',
+        data: {revenue: { name: name, gdp: gdp , tax_take: taxtake , growth_rate: growthrate}},
+       complete: function() { 
+        present()
 
-//        }
+       }
 
-//       });
+      });
   
-//   })
+  });
 
-// })
 
 ///////////////// TRANSITION REVENUE BUTTON
 
