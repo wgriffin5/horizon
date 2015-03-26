@@ -1,32 +1,14 @@
 $(document).ready(function() {
 
 //////
+
+var draw = function() {
+
 var width = 400;
 var height = 400;
- 
-
-////  PRESENT VALUE circle
-
-/// set values ??????? might be dead end with following function.
 
 
-var gdp = 18   
-var taxtake = $('#nTaxtake').val(); 
-var growthrate = $('#nGrowthrate').val();
-
-
-
-//////do math 
-var gauche = (( gdp * taxtake/100))/((taxtake/100)-(growthrate/100))
-var droit = 1 - ((1 + (growthrate/100))/(1 + (taxtake/100)))^1000
-
-var revenue = (gauche * droit) 
-
- var nRadius = 50
-
-
-
-//// draw svg
+//// draw svg 
 var svg = d3.select("body")
       .append("svg")
       .attr("width", width)    
@@ -37,30 +19,66 @@ var svg = d3.select("body")
 svg.append("circle")
   .attr("cx", 200)
   .attr("cy", 200) 
-  .style('fill', "rgba( 0, 20, 230, 0.5)" )    
-  .attr("r", 10);
+  .style('fill', "none" ) 
+  .style('stroke','rgba( 0, 20, 230, 0.5)')   
+  .attr("r", 60);
   console.log('initCIRCLE');
 //////
 
+}
 
+
+
+var calculate = function() {
+
+  var gdp = 18   
+  var taxtake = $('#nTaxtake').val(); 
+  var growthrate = $('#nGrowthrate').val();
+
+
+
+  //////do math 
+  var gauche = (( gdp * taxtake/100))/((taxtake/100)-(growthrate/100))
+  var droit = 1 - ((1 + (growthrate/100))/(1 + (taxtake/100)))^1000
+
+  var revenue = (gauche * droit) 
+
+
+}
+ 
+
+
+
+//// draw svg
+
+
+// }
 
 // read a change in the taxtake input
-d3.select("#nTaxtake").on("change", function() {
-  updateTaxtake(+this.value);
-});
-console.log('READTAXTAKE')
+d3.select("#nTaxtake").on("input", function() {
+  taxTake = $(this).val();
+  growthRate = $('#nGrowthrate').val();
+  var banana = taxTake + growthRate
+  update(banana);
+  updateTaxtake(+$(this).val());
 
+console.log('BANANA')
+});
 // read a change in the growthrate input
-d3.select("#nGrowthrate").on("change", function(e) {
-  console.log(e)
-  updateGrowthrate(+this.value);
-});
-console.log('READGROWTH')
+d3.select("#nGrowthrate").on("input", function() {
+  growthRate = $(this).val();
+  taxTake = $('#nGrowthrate').val();
+  var strawberry = growthRate + taxTake
+  update(strawberry);
+  console.log('STRAWBERRY')
+  updateGrowthrate(+$(this).val());
 
+console.log('STRAWBERRY')
+});
 // update the values
-updateTaxtake(10);
-updateGrowthrate(0.5);
-console.log('VALUEUPDATE')
+// updateTaxtake(10);
+// updateGrowthrate(0.5);
+// console.log('VALUEUPDATE')
 
 
 
@@ -72,42 +90,43 @@ console.log('VALUEUPDATE')
     d3.select("#nTaxtake").property("value", nTaxtake);
 
     //update the Taxtake variable
-    var taxtake = (+this.value)
+    // var taxtake = (+this.value)
 
-  }
+  
   console.log('UPDATETAX')
-
+}
 // Update the growthrate param
   function updateGrowthrate(nGrowthrate) {
-
+    console.log("growth rate: ", nGrowthrate);
     // adjust the text on the range slider
     d3.select("#nGrowthrate-value").text(nGrowthrate);
     d3.select("#nGrowthrate").property("value", nGrowthrate);
 
     ////update the Growthrate variable
-    var growthrate = (+this.value);
-  }
+    // var growthrate = (+this.value);
+  
   console.log('UPDATEGROWTH')
-
+}
 
 ////// MUST CHANGE CLICK EVENT
 
 //update circle upon input range changes 
 d3.select("#nTaxtake").on("change", function(e) {
   console.log($(this))
-  update(+this.value);
+  update(+$(this).val());
 });
 
 
 d3.select('#nGrowthrate').on('change', function() {
-  update(+this.value);
+  console.log($(this))
+  update(+$(this).val());
 });
 
 // // Initial starting radius of the circle 
-update(10);
-console.log('INITIALRADIUS')
+// update(10);
+// console.log('INITIALRADIUS')
 
-// update the elements
+// update Radius
 // var curRad = 10;
 function update(nRadius) {
   // curRad += nRadius
@@ -122,9 +141,21 @@ function update(nRadius) {
   // update the circle radius
   svg.selectAll("circle") 
     .attr("r", nRadius);
+    console.log('UPDATERADIUS')
 }
-console.log('UPDATERADIUS')
 
+// $(function() {
+//   $('#test').on('change'), function() {
+//     $(this).closest('body').append($(this).val())
+//   });
+
+//   $('.changeRange').on('click', 
+//     function() {
+//       var theValue =
+//     $('.changeIt').val();
+//         $('#test').val(theValue);
+//     })
+// });
 
 
 /////////////////////////////////////////////
