@@ -28,13 +28,13 @@
 //////////
 .container
   .row
-    .col-md-3
+    .col-md-4
       .form
         .input-group
         %br
           .input-group-addon
             = label_tag 'name', "Name"
-          .form-control.mb
+          .form-control
             %input#name{:type => "text", :class => "mb"}
         %br
           .input-group-addon
@@ -52,7 +52,7 @@
           .form-control
             %input#growthrate{:type => "text"}
        
-
+      .buttons
         %a.btn-3d.blue#revenue-button{:href => "#"} Present Value
 
         %a.btn-3d.red#refresh-button{:href => "/"} Reset
