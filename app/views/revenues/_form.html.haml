@@ -23,33 +23,39 @@
 
 
 
+
+
 //////////
-.input-group
-%br
-  .input-group-addon
-    = label_tag :name
-  .form-control
-    %input#name{:type => "text"}
-%br
-  .input-group-addon
-    = label_tag :gdp
-  .form-control
-    %input#gdp{:type => "text"}
-%br
-  .input-group-addon
-    = label_tag :tax_take
-  .form-control
-    %input#taxtake{:type => "text"}
-%br
-  .input-group-addon
-    = label_tag :growth_rate
-  .form-control
-    %input#growthrate{:type => "text"}
-   
+.container
+  .row
+    .col-md-3
+      .form
+        .input-group
+        %br
+          .input-group-addon
+            = label_tag 'name', "Name"
+          .form-control.mb
+            %input#name{:type => "text", :class => "mb"}
+        %br
+          .input-group-addon
+            = label_tag 'gdp', "GDP($trillions)"
+          .form-control
+            %input#gdp{:type => "text"}
+        %br
+          .input-group-addon
+            = label_tag 'tax_take', "Tax Take(%)"
+          .form-control
+            %input#taxtake{:type => "text"}
+        %br
+          .input-group-addon
+            = label_tag 'growth_rate', "Growth Rate (%)"
+          .form-control
+            %input#growthrate{:type => "text"}
+       
 
-%a.btn-3d.blue#revenue-button{:href => "#"} Present Value
+        %a.btn-3d.blue#revenue-button{:href => "#"} Present Value
 
-%a.btn-3d.red#refresh-button{:href => "/"} Reset
+        %a.btn-3d.red#refresh-button{:href => "/"} Reset
 
 / %a.btn-3d.green#gdp-button{:href => "#"} GDP
 

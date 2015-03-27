@@ -357,7 +357,7 @@ var revenueRadius = (left * right)/250
                 circle.attr("cx", 200)              
                 circle.attr("cy", 200)
                 circle.attr("r", revenueRadius)
-                .style('fill', 'rgba( 0, 0, 350, 0.5)');
+                .style('fill', 'rgba( 57, 51, 72, 0.8)');
                
 }
 

@@ -1,3 +1,19 @@
+
+.mb {
+  margin-bottom: 10px
+
+}
+
+.form {
+
+-webkit-box-shadow: -10px 17px 13px -2px rgba(0,0,0,0.68);
+-moz-box-shadow: -10px 17px 13px -2px rgba(0,0,0,0.68);
+box-shadow: -10px 17px 13px -2px rgba(0,0,0,0.68);
+
+}
+
+
+
 .input-group {
   border: none
 } 
@@ -7,11 +23,15 @@
   box-sizing: border-box;
 }
 body {
+  background-color: rgb(213, 233, 255);
+
   margin: 0;
-  background: #eaedf1;
+ box-shadow: -10px 17px 13px -2px rgba(0,0,0,0.68);;
   font-family: 'Lato', sans-serif;
 }
+
 .header {
+  color: rgb( 14, 25, 39 );
   background: white;
   padding: 30px;
   text-align: center;
